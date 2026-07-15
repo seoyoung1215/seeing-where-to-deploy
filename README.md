@@ -17,7 +17,7 @@ Then open <http://localhost:8000>.
 - `index.html`: page content and metadata
 - `static/css/`: Bulma and project-specific styles
 - `static/images/`: web-ready paper figures, portraits, and video poster
-- `static/videos/iros26-overview.mp4`: embedded one-minute overview
+- `static/videos/iros26-overview-1080p.mp4`: embedded one-minute overview
 - `static/seeing-where-to-deploy.bib`: downloadable citation
 - `paper-source/`: ignored local storage for the unpublished Overleaf archive
 
@@ -43,7 +43,7 @@ git push origin main
 
 GitHub Pages is configured to publish the `main` branch from `/ (root)`.
 
-To replace the current video later, overwrite `static/videos/iros26-overview.mp4` with a web-compatible H.264/AAC MP4 and update `static/images/video-poster.jpg` if needed.
+To replace the current video later, overwrite `static/videos/iros26-overview-1080p.mp4` with a web-compatible H.264/AAC MP4 and update `static/images/video-poster-1080p.jpg` if needed.
 
 ## Design reference
 
