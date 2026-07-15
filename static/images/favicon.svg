@@ -1,5 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Seeing Where to Deploy">
-  <rect width="64" height="64" rx="16" fill="#071513"/>
-  <circle cx="32" cy="32" r="13" fill="#3ed17c"/>
-  <circle cx="32" cy="32" r="20" fill="none" stroke="#3ed17c" stroke-opacity=".22" stroke-width="6"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Burnt-orange drone">
+  <rect width="64" height="64" rx="14" fill="#bf5700"/>
+  <g fill="none" stroke="#fff" stroke-linecap="round" stroke-width="4">
+    <path d="M27 28 18 20M37 28l9-8M27 36l-9 8M37 36l9 8"/>
+    <ellipse cx="14" cy="17" rx="9" ry="4"/>
+    <ellipse cx="50" cy="17" rx="9" ry="4"/>
+    <ellipse cx="14" cy="47" rx="9" ry="4"/>
+    <ellipse cx="50" cy="47" rx="9" ry="4"/>
+  </g>
+  <path d="M26 25h12l4 7-4 7H26l-4-7 4-7Z" fill="#fff"/>
+  <circle cx="32" cy="32" r="3" fill="#071513"/>
 </svg>

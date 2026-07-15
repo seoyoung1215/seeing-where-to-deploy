@@ -16,30 +16,34 @@ Then open <http://localhost:8000>.
 
 - `index.html`: page content and metadata
 - `static/css/`: Bulma and project-specific styles
-- `static/images/`: web-ready paper figures
-- `static/js/`: small progressive enhancements, if needed
+- `static/images/`: web-ready paper figures, portraits, and video poster
+- `static/videos/iros26-overview.mp4`: embedded one-minute overview
+- `static/seeing-where-to-deploy.bib`: downloadable citation
 - `paper-source/`: ignored local storage for the unpublished Overleaf archive
 
 The paper metadata and figures were sourced from `final_iros.tex` in the local Overleaf archive. Keep the archive under `paper-source/` so it cannot be committed accidentally.
 
-## Proposed deployment
+## Deployment
 
-Use a separate public GitHub repository named `seeing-where-to-deploy` under the `seoyoung1215` account. Configure GitHub Pages to publish from the `main` branch and repository root. The resulting URL will be:
+The site is published from the separate `seeing-where-to-deploy` repository under the `seoyoung1215` account:
 
 <https://seoyoung1215.github.io/seeing-where-to-deploy/>
 
-The existing `seoyoung1215.github.io` repository should remain the personal homepage.
+Repository: <https://github.com/seoyoung1215/seeing-where-to-deploy>
 
-After reviewing the page and creating the remote repository:
+The existing `seoyoung1215.github.io` repository remains the personal homepage and is not part of this deployment.
+
+To publish an update from this directory:
 
 ```bash
 git add .
-git commit -m "Create paper project page"
-git remote add origin https://github.com/seoyoung1215/seeing-where-to-deploy.git
-git push -u origin main
+git commit -m "Update project page"
+git push origin main
 ```
 
-Then enable Pages in the repository settings with `main` and `/ (root)` as the publishing source.
+GitHub Pages is configured to publish the `main` branch from `/ (root)`.
+
+To replace the current video later, overwrite `static/videos/iros26-overview.mp4` with a web-compatible H.264/AAC MP4 and update `static/images/video-poster.jpg` if needed.
 
 ## Template attribution
 

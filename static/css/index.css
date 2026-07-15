@@ -132,8 +132,11 @@ a:focus-visible {
 }
 
 .project-brand {
+  min-width: 32px;
+  min-height: 32px;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.75rem;
   color: var(--paper);
   font-family: "Manrope", "Helvetica Neue", sans-serif;
@@ -158,6 +161,10 @@ a:focus-visible {
 }
 
 .project-nav__links a {
+  min-height: 32px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.3rem 0.1rem;
   color: rgba(255, 255, 255, 0.76);
   font-size: 0.88rem;
   font-weight: 600;
@@ -216,7 +223,7 @@ a:focus-visible {
   margin: 0;
   color: var(--paper);
   font-family: "Manrope", "Helvetica Neue", sans-serif;
-  font-size: clamp(3.6rem, 7vw, 7.2rem);
+  font-size: clamp(2.9rem, 4.5vw, 4.1rem);
   font-weight: 700;
   letter-spacing: -0.07em;
   line-height: 0.88;
@@ -294,6 +301,21 @@ a:focus-visible {
   fill: currentColor;
 }
 
+.resource-button--active {
+  color: var(--ink);
+  background: var(--paper);
+  border-color: var(--paper);
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 140ms ease, border-color 140ms ease, transform 140ms ease;
+}
+
+.resource-button--active:hover {
+  background: var(--green);
+  border-color: var(--green);
+  transform: translateY(-1px);
+}
+
 .resource-status {
   padding: 0.16rem 0.55rem;
   color: var(--ink);
@@ -357,7 +379,7 @@ a:focus-visible {
   margin: 0;
   color: var(--ink);
   font-family: "Manrope", "Helvetica Neue", sans-serif;
-  font-size: clamp(2.45rem, 5vw, 5.2rem);
+  font-size: clamp(2rem, 3.4vw, 3.4rem);
   font-weight: 700;
   letter-spacing: -0.055em;
   line-height: 1.02;
@@ -464,7 +486,7 @@ a:focus-visible {
 }
 
 .system-copy .section-title {
-  font-size: clamp(2.5rem, 4.5vw, 4.6rem);
+  font-size: clamp(2.1rem, 3.4vw, 3.35rem);
 }
 
 .stage-list {
@@ -557,9 +579,10 @@ figcaption {
   margin: 0;
   padding: clamp(1rem, 2.5vw, 2.25rem);
   overflow: hidden;
-  background: #000;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: var(--paper);
+  border: 1px solid rgba(255, 255, 255, 0.28);
   border-radius: var(--radius);
+  box-shadow: 0 24px 65px rgba(0, 0, 0, 0.24);
 }
 
 .pipeline-figure img {
@@ -567,10 +590,15 @@ figcaption {
   height: auto;
 }
 
+.pipeline-image-link {
+  display: block;
+  border-radius: 12px;
+}
+
 .pipeline-figure figcaption {
   max-width: 960px;
   margin: 1rem auto 0;
-  color: rgba(255, 255, 255, 0.5);
+  color: #596562;
   text-align: center;
 }
 
@@ -624,7 +652,32 @@ figcaption {
 }
 
 .metric-intro .section-title {
-  font-size: clamp(2.5rem, 4.8vw, 5rem);
+  font-size: clamp(2.1rem, 3.4vw, 3.35rem);
+}
+
+.video-section {
+  background: var(--paper);
+}
+
+.video-container {
+  max-width: 1040px !important;
+}
+
+.video-section .section-heading {
+  margin-bottom: 2.75rem;
+}
+
+.video-figure {
+  margin: 0;
+}
+
+.video-figure video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: var(--ink);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
 }
 
 .metric-intro .section-lead {
@@ -807,6 +860,83 @@ figcaption {
   font-size: 0.82rem !important;
 }
 
+.team-section {
+  background: var(--sand);
+}
+
+.team-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.team-card {
+  flex: 0 1 calc((100% - 8rem) / 5);
+  min-width: 0;
+  text-align: center;
+}
+
+.team-avatar {
+  width: min(100%, 190px);
+  aspect-ratio: 1;
+  margin: 0 auto;
+  object-fit: cover;
+  border: 5px solid var(--paper);
+  border-radius: 50%;
+  box-shadow: 0 16px 36px rgba(11, 23, 21, 0.12);
+}
+
+.team-avatar--placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.82);
+  background: var(--accent);
+}
+
+.team-avatar--placeholder svg {
+  width: 48%;
+  fill: currentColor;
+}
+
+.team-avatar--orange {
+  background: #bf532d;
+}
+
+.team-avatar--teal {
+  background: var(--teal);
+}
+
+.team-avatar--purple {
+  background: var(--purple);
+}
+
+.team-card h3 {
+  margin: 1.25rem 0 0;
+  color: var(--ink);
+  font-family: "Manrope", "Helvetica Neue", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+}
+
+.team-card h3 a {
+  text-decoration: none;
+}
+
+.team-card h3 a:hover {
+  text-decoration: underline;
+}
+
+.team-card p {
+  margin: 0.45rem auto 0;
+  color: #55615e;
+  font-size: 0.76rem;
+  line-height: 1.45;
+}
+
 .citation-section {
   color: var(--paper);
   background: #071513;
@@ -825,7 +955,7 @@ figcaption {
 
 .citation-section .section-title {
   color: var(--paper);
-  font-size: clamp(2.5rem, 4.5vw, 4.6rem);
+  font-size: clamp(2.1rem, 3.4vw, 3.35rem);
 }
 
 .citation-section .section-lead {
@@ -833,11 +963,38 @@ figcaption {
   font-size: 1rem;
 }
 
-.citation-placeholder {
+.citation-reference {
+  margin: 1.75rem 0 0;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+.citation-links {
   display: flex;
-  min-height: 150px;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 1.5rem;
+}
+
+.citation-links a {
+  display: inline-flex;
+  min-height: 38px;
   align-items: center;
-  gap: 0.8rem;
+  padding: 0.45rem 0.85rem;
+  color: var(--ink);
+  background: var(--green);
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.citation-links a:hover {
+  background: var(--paper);
+}
+
+.citation-code {
   padding: clamp(1.5rem, 4vw, 3rem);
   overflow: hidden;
   background: #020706;
@@ -846,25 +1003,22 @@ figcaption {
   box-shadow: 0 25px 65px rgba(0, 0, 0, 0.3);
 }
 
-.citation-placeholder__prompt {
-  color: var(--green);
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  font-weight: 700;
+.citation-code pre {
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+  background: transparent;
 }
 
-.citation-placeholder code {
-  color: rgba(255, 255, 255, 0.68);
+.citation-code code {
+  display: block;
+  color: rgba(255, 255, 255, 0.76);
   background: transparent;
   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  font-size: clamp(0.75rem, 1.5vw, 0.95rem);
-  white-space: nowrap;
-}
-
-.citation-placeholder__cursor {
-  width: 8px;
-  height: 1.15em;
-  flex: 0 0 auto;
-  background: var(--green);
+  font-size: clamp(0.68rem, 1.1vw, 0.82rem);
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
 }
 
 .site-footer {
@@ -918,6 +1072,14 @@ figcaption {
   .citation-grid {
     gap: 4rem;
   }
+
+  .team-grid {
+    gap: 2rem;
+  }
+
+  .team-card {
+    flex-basis: calc((100% - 4rem) / 3);
+  }
 }
 
 @media (max-width: 768px) {
@@ -968,7 +1130,7 @@ figcaption {
   }
 
   .hero-title {
-    font-size: clamp(3.25rem, 16vw, 5.3rem);
+    font-size: clamp(2.85rem, 12vw, 3.75rem);
   }
 
   .hero-subtitle {
@@ -1003,7 +1165,7 @@ figcaption {
   }
 
   .section-title {
-    font-size: clamp(2.35rem, 10vw, 4rem);
+    font-size: clamp(2rem, 8vw, 2.8rem);
   }
 
   .abstract-card {
@@ -1068,12 +1230,16 @@ figcaption {
     padding-top: 5rem;
   }
 
-  .citation-placeholder {
-    min-height: 120px;
-  }
-
   .footer-grid {
     gap: 2.5rem;
+  }
+
+  .team-grid {
+    gap: 1.25rem;
+  }
+
+  .team-card {
+    flex-basis: calc((100% - 1.25rem) / 2);
   }
 }
 
@@ -1083,7 +1249,7 @@ figcaption {
   }
 
   .project-nav__links a:nth-child(2),
-  .project-nav__links a:nth-child(4) {
+  .project-nav__links a:nth-child(5) {
     display: none;
   }
 
@@ -1093,7 +1259,7 @@ figcaption {
   }
 
   .hero-title {
-    font-size: clamp(3.1rem, 17vw, 4.25rem);
+    font-size: clamp(2.75rem, 12vw, 3.25rem);
   }
 
   .hero-subtitle {
@@ -1156,12 +1322,12 @@ figcaption {
     margin-top: 0.6rem;
   }
 
-  .citation-placeholder {
+  .citation-code {
     padding: 1.25rem;
   }
 
-  .citation-placeholder code {
-    white-space: normal;
+  .citation-code code {
+    font-size: 0.65rem;
   }
 }
 

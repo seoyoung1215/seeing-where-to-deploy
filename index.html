@@ -8,8 +8,18 @@
   <meta name="author" content="Seoyoung Lee, Shaekh Mohammad Shithil, Durgakant Pushp, Lantao Liu, Zhangyang Wang">
   <meta name="theme-color" content="#071513">
 
+  <meta name="citation_title" content="Seeing Where to Deploy: Metric RGB-Based Traversability Analysis for Aerial-to-Ground Hidden Space Inspection">
+  <meta name="citation_author" content="Seoyoung Lee">
+  <meta name="citation_author" content="Shaekh Mohammad Shithil">
+  <meta name="citation_author" content="Durgakant Pushp">
+  <meta name="citation_author" content="Lantao Liu">
+  <meta name="citation_author" content="Zhangyang Wang">
+  <meta name="citation_publication_date" content="2026">
+  <meta name="citation_online_date" content="2026/03/15">
+  <meta name="citation_conference_title" content="2026 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)">
+
   <link rel="canonical" href="https://seoyoung1215.github.io/seeing-where-to-deploy/">
-  <link rel="icon" href="./static/images/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="./static/images/favicon.svg?v=2" type="image/svg+xml">
   <link rel="preload" as="image" href="./static/images/system-hero.jpg" fetchpriority="high">
 
   <meta property="og:type" content="website">
@@ -57,6 +67,7 @@
           <a href="#overview">Overview</a>
           <a href="#method">Method</a>
           <a href="#results">Results</a>
+          <a href="#team">Team</a>
           <a href="#citation">Citation</a>
         </div>
       </div>
@@ -81,21 +92,19 @@
         </p>
 
         <div class="resource-links" aria-label="Project resources">
-          <span class="resource-button" title="Paper coming soon">
+          <a class="resource-button resource-button--active" href="https://arxiv.org/abs/2603.14639" aria-label="Paper on arXiv">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h8l4 4v16H6V2Zm7 1.8V7h3.2L13 3.8ZM8 10v2h8v-2H8Zm0 4v2h8v-2H8Zm0 4v2h5v-2H8Z"/></svg>
             <span>Paper</span>
-            <span class="resource-status">Soon</span>
-          </span>
+          </a>
           <span class="resource-button" title="Code coming soon">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8.7 17.7-5.3-5.3 5.3-5.3 1.4 1.4-3.9 3.9 3.9 3.9-1.4 1.4Zm6.6 0-1.4-1.4 3.9-3.9-3.9-3.9 1.4-1.4 5.3 5.3-5.3 5.3Z"/></svg>
             <span>Code</span>
             <span class="resource-status">Soon</span>
           </span>
-          <span class="resource-button" title="Video coming soon">
+          <a class="resource-button resource-button--active" href="#video" aria-label="Watch the one-minute technical overview">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h12a2 2 0 0 1 2 2v2.6l4-2.3v11.4l-4-2.3V18a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm0 2v12h12V6H4Z"/></svg>
             <span>Video</span>
-            <span class="resource-status">Soon</span>
-          </span>
+          </a>
         </div>
       </div>
     </div>
@@ -183,13 +192,15 @@
         </div>
 
         <figure class="pipeline-figure">
-          <img
-            src="./static/images/method-pipeline.png"
-            alt="Pipeline diagram showing top-down RGB input, VGGT geometry and adaptive segmentation, embodied metric grounding, target extraction, and traversability estimation"
-            width="2600"
-            height="771"
-            loading="lazy">
-          <figcaption>Overview of the proposed pipeline. Top-down RGB frames drive geometric reconstruction and adaptive segmentation; egomotion grounds the result in metric scale before traversability analysis.</figcaption>
+          <a class="pipeline-image-link" href="./static/images/method-pipeline.png" aria-label="Open the pipeline diagram at full resolution">
+            <img
+              src="./static/images/method-pipeline.png"
+              alt="Pipeline diagram showing top-down RGB input, VGGT geometry and adaptive segmentation, embodied metric grounding, target extraction, and traversability estimation"
+              width="2600"
+              height="771"
+              loading="lazy">
+          </a>
+          <figcaption>Overview of the proposed pipeline. Top-down RGB frames drive geometric reconstruction and adaptive segmentation; egomotion grounds the result in metric scale before traversability analysis. <a href="./static/images/method-pipeline.png">Open the full-resolution figure.</a></figcaption>
         </figure>
 
         <div class="method-grid">
@@ -209,6 +220,24 @@
             <p>A confidence-aware bird's-eye-view grid combines local slope, roughness, clearance, and semantic compatibility into a continuous traversability score.</p>
           </article>
         </div>
+      </div>
+    </section>
+
+    <section class="section-block video-section" id="video" aria-labelledby="video-title">
+      <div class="container video-container">
+        <div class="section-heading section-heading--wide">
+          <p class="eyebrow">Technical overview</p>
+          <h2 class="section-title" id="video-title">The system in one minute.</h2>
+          <p class="section-lead">A concise walkthrough of data collection, metric reconstruction, traversability analysis, and deployment planning.</p>
+        </div>
+
+        <figure class="video-figure">
+          <video controls playsinline preload="metadata" poster="./static/images/video-poster.jpg">
+            <source src="./static/videos/iros26-overview.mp4" type="video/mp4">
+            Your browser does not support embedded video. <a href="./static/videos/iros26-overview.mp4">Download the MP4 video</a> instead.
+          </video>
+          <figcaption>One-minute video submitted with the IROS 2026 paper.</figcaption>
+        </figure>
       </div>
     </section>
 
@@ -352,17 +381,82 @@
       </div>
     </section>
 
+    <section class="section-block team-section" id="team" aria-labelledby="team-title">
+      <div class="container">
+        <div class="section-heading section-heading--wide">
+          <p class="eyebrow">Authors</p>
+          <h2 class="section-title" id="team-title">Team</h2>
+        </div>
+
+        <div class="team-grid">
+          <article class="team-card">
+            <img class="team-avatar" src="./static/images/team-seoyoung.jpg" alt="Seoyoung Lee" width="600" height="600" loading="lazy">
+            <h3><a href="https://seoyoung1215.github.io/">Seoyoung Lee</a></h3>
+            <p>The University of Texas at Austin</p>
+          </article>
+
+          <article class="team-card">
+            <img class="team-avatar" src="./static/images/team-shaekh.jpg" alt="Shaekh Mohammad Shithil" width="600" height="600" loading="lazy">
+            <h3>Shaekh Mohammad Shithil</h3>
+            <p>Indiana University Bloomington</p>
+          </article>
+
+          <article class="team-card">
+            <div class="team-avatar team-avatar--placeholder team-avatar--orange" aria-hidden="true">
+              <svg viewBox="0 0 64 64"><circle cx="32" cy="21" r="11"/><path d="M14 52c0-10 8-18 18-18s18 8 18 18v4H14v-4Z"/></svg>
+            </div>
+            <h3>Durgakant Pushp</h3>
+            <p>Indiana University Bloomington</p>
+          </article>
+
+          <article class="team-card">
+            <div class="team-avatar team-avatar--placeholder team-avatar--teal" aria-hidden="true">
+              <svg viewBox="0 0 64 64"><circle cx="32" cy="21" r="11"/><path d="M14 52c0-10 8-18 18-18s18 8 18 18v4H14v-4Z"/></svg>
+            </div>
+            <h3>Lantao Liu</h3>
+            <p>Indiana University Bloomington</p>
+          </article>
+
+          <article class="team-card">
+            <div class="team-avatar team-avatar--placeholder team-avatar--purple" aria-hidden="true">
+              <svg viewBox="0 0 64 64"><circle cx="32" cy="21" r="11"/><path d="M14 52c0-10 8-18 18-18s18 8 18 18v4H14v-4Z"/></svg>
+            </div>
+            <h3>Zhangyang Wang</h3>
+            <p>The University of Texas at Austin</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="section-block citation-section" id="citation" aria-labelledby="citation-title">
       <div class="container citation-grid">
         <div>
           <p class="eyebrow">Citation</p>
-          <h2 class="section-title" id="citation-title">Paper details are coming soon.</h2>
-          <p class="section-lead">The paper, code, video, and verified BibTeX entry will be added here when the public release is available.</p>
+          <h2 class="section-title" id="citation-title">Cite our work.</h2>
+          <p class="section-lead">The paper is available as <a href="https://arxiv.org/abs/2603.14639">arXiv:2603.14639</a>, and the one-minute technical overview is available <a href="#video">above</a>. Code will be linked when it is publicly available.</p>
+          <p class="citation-reference">Seoyoung Lee, Shaekh Mohammad Shithil, Durgakant Pushp, Lantao Liu, and Zhangyang Wang. “Seeing Where to Deploy: Metric RGB-Based Traversability Analysis for Aerial-to-Ground Hidden Space Inspection.” 2026 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), 2026.</p>
+          <div class="citation-links" aria-label="Citation resources">
+            <a href="https://arxiv.org/abs/2603.14639">arXiv</a>
+            <a href="https://scholar.google.com/scholar_lookup?arxiv_id=2603.14639">Google Scholar</a>
+            <a href="./static/seeing-where-to-deploy.bib" download>BibTeX</a>
+          </div>
         </div>
-        <div class="citation-placeholder" role="status" aria-label="Citation not yet available">
-          <span class="citation-placeholder__prompt">$</span>
-          <code>citation metadata pending public release</code>
-          <span class="citation-placeholder__cursor" aria-hidden="true"></span>
+        <div class="citation-code" aria-label="BibTeX citation">
+          <pre><code>@inproceedings{lee2026seeingwheretodeploy,
+  title        = {Seeing Where to Deploy: Metric RGB-Based
+                  Traversability Analysis for Aerial-to-Ground
+                  Hidden Space Inspection},
+  author       = {Lee, Seoyoung and
+                  Shithil, Shaekh Mohammad and
+                  Pushp, Durgakant and
+                  Liu, Lantao and
+                  Wang, Zhangyang},
+  booktitle    = {2026 IEEE/RSJ International
+                  Conference on Intelligent Robots
+                  and Systems (IROS)},
+  year         = {2026},
+  url          = {https://arxiv.org/abs/2603.14639}
+}</code></pre>
         </div>
       </div>
     </section>
