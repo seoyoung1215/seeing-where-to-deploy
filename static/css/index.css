@@ -944,9 +944,12 @@ figcaption {
 
 .citation-grid {
   display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(360px, 1.1fr);
-  gap: clamp(3rem, 8vw, 8rem);
-  align-items: center;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 3rem;
+}
+
+.citation-grid > div:first-child {
+  max-width: 900px;
 }
 
 .citation-section .eyebrow {
@@ -996,7 +999,7 @@ figcaption {
 
 .citation-code {
   padding: clamp(1.5rem, 4vw, 3rem);
-  overflow: hidden;
+  overflow-x: auto;
   background: #020706;
   border: 1px solid var(--line-light);
   border-radius: 16px;
@@ -1017,8 +1020,7 @@ figcaption {
   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   font-size: clamp(0.68rem, 1.1vw, 0.82rem);
   line-height: 1.55;
-  overflow-wrap: anywhere;
-  white-space: pre-wrap;
+  white-space: pre;
 }
 
 .site-footer {
