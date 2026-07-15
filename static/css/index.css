@@ -901,6 +901,25 @@ figcaption {
   text-align: center;
 }
 
+.team-avatar-link {
+  display: block;
+  width: min(100%, 190px);
+  aspect-ratio: 1;
+  margin: 0 auto;
+  border-radius: 50%;
+  text-decoration: none;
+}
+
+.team-avatar-link .team-avatar {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.team-avatar-link:focus-visible {
+  border-radius: 50%;
+}
+
 .team-avatar {
   width: min(100%, 190px);
   aspect-ratio: 1;
