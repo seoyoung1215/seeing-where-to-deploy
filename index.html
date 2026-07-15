@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Seeing Where to Deploy presents metric RGB-based geometric-semantic reconstruction and traversability analysis for aerial-to-ground hidden space inspection.">
+  <meta name="keywords" content="robotics, aerial robotics, UAV, UGV, traversability, RGB reconstruction, semantic mapping, hidden space inspection, IROS 2026">
+  <meta name="author" content="Seoyoung Lee, Shaekh Mohammad Shithil, Durgakant Pushp, Lantao Liu, Zhangyang Wang">
+  <meta name="theme-color" content="#071513">
+
+  <link rel="canonical" href="https://seoyoung1215.github.io/seeing-where-to-deploy/">
+  <link rel="icon" href="./static/images/favicon.svg" type="image/svg+xml">
+  <link rel="preload" as="image" href="./static/images/system-hero.jpg" fetchpriority="high">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://seoyoung1215.github.io/seeing-where-to-deploy/">
+  <meta property="og:title" content="Seeing Where to Deploy">
+  <meta property="og:description" content="Metric RGB-based traversability analysis for aerial-to-ground hidden space inspection.">
+  <meta property="og:image" content="https://seoyoung1215.github.io/seeing-where-to-deploy/static/images/system-hero.jpg">
+  <meta property="og:image:alt" content="An integrated UAV and compact tracked UGV inspection platform">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Seeing Where to Deploy">
+  <meta name="twitter:description" content="Metric RGB-based traversability analysis for aerial-to-ground hidden space inspection.">
+  <meta name="twitter:image" content="https://seoyoung1215.github.io/seeing-where-to-deploy/static/images/system-hero.jpg">
+
+  <title>Seeing Where to Deploy | IROS 2026</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Manrope:wght@500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+</head>
+
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="paper-hero" id="top">
+    <img
+      class="paper-hero__image"
+      src="./static/images/system-hero.jpg"
+      alt=""
+      width="1810"
+      height="1280"
+      aria-hidden="true"
+      fetchpriority="high">
+    <div class="paper-hero__overlay" aria-hidden="true"></div>
+
+    <nav class="project-nav" aria-label="Primary navigation">
+      <div class="container nav-inner">
+        <a class="project-brand" href="#top" aria-label="Seeing Where to Deploy, back to top">
+          <span class="project-brand__mark" aria-hidden="true"></span>
+          <span>Seeing Where to Deploy</span>
+        </a>
+        <div class="project-nav__links">
+          <a href="#overview">Overview</a>
+          <a href="#method">Method</a>
+          <a href="#results">Results</a>
+          <a href="#citation">Citation</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="hero-content">
+      <div class="container">
+        <p class="hero-kicker">IROS 2026 <span aria-hidden="true">/</span> Aerial-ground robotics</p>
+        <h1 class="hero-title">Seeing Where<br>to Deploy</h1>
+        <p class="hero-subtitle">Metric RGB-Based Traversability Analysis for Aerial-to-Ground Hidden Space Inspection</p>
+
+        <p class="hero-authors" aria-label="Authors">
+          <a href="https://seoyoung1215.github.io/">Seoyoung Lee</a><sup>1</sup>,
+          <span>Shaekh Mohammad Shithil</span><sup>2</sup>,
+          <span>Durgakant Pushp</span><sup>2</sup>,
+          <span>Lantao Liu</span><sup>2</sup>,
+          <span>Zhangyang Wang</span><sup>1</sup>
+        </p>
+        <p class="hero-affiliations">
+          <span><sup>1</sup>The University of Texas at Austin</span>
+          <span><sup>2</sup>Indiana University Bloomington</span>
+        </p>
+
+        <div class="resource-links" aria-label="Project resources">
+          <span class="resource-button" title="Paper coming soon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h8l4 4v16H6V2Zm7 1.8V7h3.2L13 3.8ZM8 10v2h8v-2H8Zm0 4v2h8v-2H8Zm0 4v2h5v-2H8Z"/></svg>
+            <span>Paper</span>
+            <span class="resource-status">Soon</span>
+          </span>
+          <span class="resource-button" title="Code coming soon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8.7 17.7-5.3-5.3 5.3-5.3 1.4 1.4-3.9 3.9 3.9 3.9-1.4 1.4Zm6.6 0-1.4-1.4 3.9-3.9-3.9-3.9 1.4-1.4 5.3 5.3-5.3 5.3Z"/></svg>
+            <span>Code</span>
+            <span class="resource-status">Soon</span>
+          </span>
+          <span class="resource-button" title="Video coming soon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h12a2 2 0 0 1 2 2v2.6l4-2.3v11.4l-4-2.3V18a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm0 2v12h12V6H4Z"/></svg>
+            <span>Video</span>
+            <span class="resource-status">Soon</span>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-jump" aria-label="Page sections">
+      <div class="container hero-jump__inner">
+        <span>From top-down RGB</span>
+        <a href="#system">01 System</a>
+        <a href="#method">02 Reconstruction</a>
+        <a href="#results">03 Deployment</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="section-block overview-section" id="overview" aria-labelledby="overview-title">
+      <div class="container">
+        <div class="section-heading section-heading--wide">
+          <p class="eyebrow">The problem</p>
+          <h2 class="section-title" id="overview-title">A safe landing region must be seen before it can be reached.</h2>
+          <p class="section-lead">Hidden spaces such as culverts and ventilation systems are difficult to access from the ground. A UAV can scout from above and carry a compact UGV, but deployment requires reliable metric terrain reasoning from a constrained aerial view.</p>
+        </div>
+
+        <article class="abstract-card" aria-labelledby="abstract-title">
+          <h3 id="abstract-title">Abstract</h3>
+          <p>Inspection of confined infrastructure such as culverts often requires accessing hidden spaces whose entrances are reachable primarily from elevated viewpoints. Aerial–ground cooperation enables a UAV to deploy a compact UGV for interior exploration, but selecting a suitable deployment region from aerial observations requires metric terrain reasoning involving scale ambiguity, reconstruction uncertainty, and terrain semantics.</p>
+          <p>We present a metric RGB-based geometric–semantic reconstruction and traversability analysis framework for aerial-to-ground hidden space inspection. A feed-forward multi-view RGB reconstruction backbone produces dense geometry, while temporally consistent semantic segmentation yields a 3D semantic map. To enable deployment-relevant measurements without requiring LiDAR-based dense mapping, we introduce an embodied motion prior that recovers metric scale by aligning predicted camera motion with onboard platform egomotion. From the metrically grounded reconstruction, we construct a confidence-aware geometric–semantic traversability map and evaluate candidate deployment zones under explicit reachability constraints. Experiments on a tethered UAV–UGV platform demonstrate reliable deployment-zone identification in hidden space scenarios.</p>
+        </article>
+
+        <div class="contribution-grid" aria-label="Contributions">
+          <article class="contribution-card">
+            <span class="card-number">01</span>
+            <h3>Geometry meets semantics</h3>
+            <p>Feed-forward multi-view reconstruction and temporally consistent segmentation produce a coherent semantic 3D scene from RGB video.</p>
+          </article>
+          <article class="contribution-card">
+            <span class="card-number">02</span>
+            <h3>Scale becomes metric</h3>
+            <p>Onboard egomotion grounds relative visual predictions in real-world scale without using dense LiDAR terrain maps.</p>
+          </article>
+          <article class="contribution-card">
+            <span class="card-number">03</span>
+            <h3>Terrain becomes actionable</h3>
+            <p>Geometry, semantics, and reconstruction confidence combine into a bird's-eye-view map for deployment-zone selection.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block system-section" id="system" aria-labelledby="system-title">
+      <div class="container">
+        <div class="system-grid">
+          <div class="system-copy">
+            <p class="eyebrow">Integrated system</p>
+            <h2 class="section-title" id="system-title">Aerial access, ground-level inspection.</h2>
+            <p class="section-lead">The DJI Matrice M600 carries a compact tracked ground robot and observes potential deployment regions from above. The platform includes a RealSense camera, Jetson Xavier NX, and a Livox Mid-360 used for FAST-LIO egomotion. Dense reconstruction and traversability use RGB observations, not LiDAR point clouds.</p>
+
+            <ol class="stage-list">
+              <li><strong>Survey</strong><span>Capture a short top-down RGB sequence over the hidden-space entrance.</span></li>
+              <li><strong>Reconstruct</strong><span>Predict dense geometry and temporally stable semantic regions.</span></li>
+              <li><strong>Ground</strong><span>Align predicted camera motion with platform egomotion to recover metric scale.</span></li>
+              <li><strong>Evaluate</strong><span>Score terrain and retain safe, reachable candidate deployment zones.</span></li>
+            </ol>
+          </div>
+
+          <figure class="paper-figure system-figure">
+            <img
+              src="./static/images/system-hero.jpg"
+              alt="DJI Matrice M600 with a highlighted RealSense and Livox sensor assembly beside the compact tracked UGV"
+              width="1810"
+              height="1280"
+              loading="lazy">
+            <figcaption>Integrated aerial-ground robotic system. The compact UGV supports interior inspection after aerial transport and deployment.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block method-section" id="method" aria-labelledby="method-title">
+      <div class="container">
+        <div class="section-heading section-heading--wide section-heading--light">
+          <p class="eyebrow">Proposed framework</p>
+          <h2 class="section-title" id="method-title">From overhead video to deployment-aware terrain.</h2>
+          <p class="section-lead">The pipeline separates perception, physical scale recovery, and deployment reasoning while keeping every stage tied to the final decision.</p>
+        </div>
+
+        <figure class="pipeline-figure">
+          <img
+            src="./static/images/method-pipeline.png"
+            alt="Pipeline diagram showing top-down RGB input, VGGT geometry and adaptive segmentation, embodied metric grounding, target extraction, and traversability estimation"
+            width="2600"
+            height="771"
+            loading="lazy">
+          <figcaption>Overview of the proposed pipeline. Top-down RGB frames drive geometric reconstruction and adaptive segmentation; egomotion grounds the result in metric scale before traversability analysis.</figcaption>
+        </figure>
+
+        <div class="method-grid">
+          <article>
+            <p class="method-label">Geometric reconstruction</p>
+            <h3>Dense, feed-forward 3D</h3>
+            <p>VGGT predicts camera parameters, depth, and confidence for a set of uncalibrated RGB frames. Depth unprojection produces the scene geometry without scene-specific optimization.</p>
+          </article>
+          <article>
+            <p class="method-label">Adaptive segmentation</p>
+            <h3>Consistent labels over time</h3>
+            <p>New object masks are discovered at keyframes and propagated across the video, then lifted into 3D to align semantic identity with reconstructed geometry.</p>
+          </article>
+          <article>
+            <p class="method-label">Deployment reasoning</p>
+            <h3>Scores with physical meaning</h3>
+            <p>A confidence-aware bird's-eye-view grid combines local slope, roughness, clearance, and semantic compatibility into a continuous traversability score.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block metric-section" id="metric" aria-labelledby="metric-title">
+      <div class="container">
+        <div class="metric-intro">
+          <div>
+            <p class="eyebrow">Embodied metric grounding</p>
+            <h2 class="section-title" id="metric-title">Relative visual geometry, grounded in real motion.</h2>
+          </div>
+          <div>
+            <p class="section-lead">Monocular reconstruction has no absolute scale. The method aligns relative camera displacements predicted from RGB with metric displacements from onboard state estimation, then applies the recovered similarity transform to every camera and 3D point.</p>
+            <p class="metric-note"><strong>Why it matters:</strong> slope, obstacle clearance, and support-footprint variation only become deployment constraints when reconstruction is expressed in physical units.</p>
+          </div>
+        </div>
+
+        <figure class="paper-figure wide-figure">
+          <img
+            src="./static/images/metric-reconstruction.jpg"
+            alt="Top-down and ground-level geometric and semantic reconstructions of culvert and vent scenes from UAV elevations between 12 and 70 meters"
+            width="2200"
+            height="989"
+            loading="lazy">
+          <figcaption>RGB-based geometric and semantic reconstruction across flight elevations. The method preserves meaningful scene structure from purely top-down observations in culvert and vent scenarios.</figcaption>
+        </figure>
+
+        <div class="metric-results" aria-labelledby="pose-results-title">
+          <div class="metric-results__copy">
+            <p class="eyebrow">Pose estimation</p>
+            <h3 id="pose-results-title">Relative motion improves all reported trajectory metrics.</h3>
+            <p>Results are averaged over the field-collected inspection data. Lower values are better.</p>
+          </div>
+          <div class="table-wrap">
+            <table class="results-table">
+              <caption class="visually-hidden">Pose estimation comparison with and without relative motion grounding</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Variant</th>
+                  <th scope="col">ATE ↓</th>
+                  <th scope="col">RPE<sub>trans</sub> ↓</th>
+                  <th scope="col">RPE<sub>rot</sub> ↓</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Ours</th>
+                  <td>0.222</td>
+                  <td>0.338</td>
+                  <td>1.920</td>
+                </tr>
+                <tr class="best-row">
+                  <th scope="row">Ours + relative motion</th>
+                  <td><strong>0.194</strong></td>
+                  <td><strong>0.310</strong></td>
+                  <td><strong>1.878</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block results-section" id="results" aria-labelledby="results-title">
+      <div class="container">
+        <div class="section-heading section-heading--wide">
+          <p class="eyebrow">Traversability and deployment</p>
+          <h2 class="section-title" id="results-title">Geometry finds flat ground. Semantics catches what shape alone misses.</h2>
+          <p class="section-lead">A planar rocky region can look safe after geometric smoothing. Semantic fusion suppresses such terrain even when its local slope and roughness appear acceptable.</p>
+        </div>
+
+        <figure class="paper-figure traversability-figure">
+          <img
+            src="./static/images/traversability-fusion.jpg"
+            alt="Side-by-side RGB reconstruction, semantic segmentation, geometric traversability, and geometry-semantic fusion maps"
+            width="2400"
+            height="426"
+            loading="lazy">
+          <figcaption>From left: RGB-based reconstruction, semantic segmentation, geometric traversability, and geometric-semantic fusion. Green indicates higher traversability and red indicates lower traversability.</figcaption>
+        </figure>
+
+        <div class="result-detail-grid">
+          <div class="result-summary">
+            <p class="eyebrow">Field results</p>
+            <h3>Fusion is more conservative and more accurate.</h3>
+            <p>Ground-truth bird's-eye-view cells are labeled using terrain semantics and deployment safety criteria. Scores are thresholded at 0.5 for binary comparison.</p>
+            <div class="result-callout">
+              <strong>0.958</strong>
+              <span>mean accuracy for geometric-semantic fusion</span>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table class="results-table results-table--large">
+              <caption>Traversability accuracy</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Model</th>
+                  <th scope="col">mACC ↑</th>
+                  <th scope="col">aAcc ↑</th>
+                  <th scope="col">ROC AUC ↑</th>
+                  <th scope="col">MSE ↓</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Geometric</th>
+                  <td>0.779</td>
+                  <td>0.841</td>
+                  <td>0.926</td>
+                  <td>0.113</td>
+                </tr>
+                <tr class="best-row">
+                  <th scope="row">Fusion</th>
+                  <td><strong>0.958</strong></td>
+                  <td><strong>0.938</strong></td>
+                  <td><strong>0.948</strong></td>
+                  <td><strong>0.042</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="deployment-grid">
+          <figure class="paper-figure deployment-figure">
+            <img
+              src="./static/images/deployment-trajectory.jpg"
+              alt="Candidate aerial deployment locations and trajectories over a color-coded traversability surface"
+              width="1900"
+              height="1100"
+              loading="lazy">
+            <figcaption>Candidate deployment locations and feasible UAV trajectories on the traversability surface.</figcaption>
+          </figure>
+          <div class="deployment-copy">
+            <p class="eyebrow">Planning connection</p>
+            <h3>From terrain scores to reachable targets.</h3>
+            <p>Candidate zones are selected from high-traversability cells near the target region. A hazard-aware planner generates dynamically feasible trajectories from the UAV state to selected deployment locations while avoiding terrain marked unsafe.</p>
+            <p class="future-note">Physical UGV release, post-deployment traversal, retrieval, and safety-aware failure handling remain future end-to-end validation steps.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block citation-section" id="citation" aria-labelledby="citation-title">
+      <div class="container citation-grid">
+        <div>
+          <p class="eyebrow">Citation</p>
+          <h2 class="section-title" id="citation-title">Paper details are coming soon.</h2>
+          <p class="section-lead">The paper, code, video, and verified BibTeX entry will be added here when the public release is available.</p>
+        </div>
+        <div class="citation-placeholder" role="status" aria-label="Citation not yet available">
+          <span class="citation-placeholder__prompt">$</span>
+          <code>citation metadata pending public release</code>
+          <span class="citation-placeholder__cursor" aria-hidden="true"></span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="footer-title" href="#top">Seeing Where to Deploy</a>
+        <p>Metric RGB-based traversability analysis for aerial-to-ground hidden space inspection.</p>
+      </div>
+      <div class="footer-credits">
+        <p>Website design adapted from <a href="https://umi-on-air.github.io/">UMI-on-Air</a>, <a href="https://umi-on-legs.github.io/">UMI-on-Legs</a>, and <a href="https://nerfies.github.io/">NeRFies</a>, with original academic-site template lineage from <a href="https://jonbarron.info/">Jon Barron</a>.</p>
+        <p>Website source and design adaptations are shared under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. Paper content and media retain their respective rights.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

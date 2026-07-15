@@ -1,0 +1,7 @@
+.DS_Store
+.idea/
+.vscode/
+
+# The paper source contains unpublished drafts and author comments.
+paper-source/
+*.zip
