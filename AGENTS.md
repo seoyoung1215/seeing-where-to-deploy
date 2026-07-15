@@ -27,7 +27,7 @@ python3 -m http.server 8000
 - Do not commit `paper-source/` or an Overleaf archive unless the user explicitly decides to publish the source.
 - Optimize added media for web delivery while retaining the original files in the ignored paper source.
 - Preserve responsive behavior, semantic headings, useful alternative text, keyboard navigation, and reduced-motion support.
-- Credit UMI-on-Air, UMI-on-Legs, and NeRFies in the footer and `LICENSE-WEBSITE.md`.
+- Credit UMI-on-Air as a design reference in the footer and `LICENSE-WEBSITE.md`.
 - Do not use em dashes in visible page copy or collaborator responses.
 
 ## Proposed deployment

@@ -45,6 +45,6 @@ GitHub Pages is configured to publish the `main` branch from `/ (root)`.
 
 To replace the current video later, overwrite `static/videos/iros26-overview.mp4` with a web-compatible H.264/AAC MP4 and update `static/images/video-poster.jpg` if needed.
 
-## Template attribution
+## Design reference
 
-The visual structure is adapted from [UMI-on-Air](https://umi-on-air.github.io/) and [UMI-on-Legs](https://umi-on-legs.github.io/), based on the [NeRFies](https://nerfies.github.io/) project-page template. See [LICENSE-WEBSITE.md](LICENSE-WEBSITE.md).
+The visual direction was inspired by [UMI-on-Air](https://umi-on-air.github.io/). The implementation is project-specific. See [LICENSE-WEBSITE.md](LICENSE-WEBSITE.md).
