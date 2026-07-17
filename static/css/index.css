@@ -955,6 +955,12 @@ figcaption {
   height: 160%;
 }
 
+.team-avatar__image--atlas {
+  top: -4%;
+  width: 104%;
+  height: 104%;
+}
+
 .team-avatar--placeholder {
   display: flex;
   align-items: center;
